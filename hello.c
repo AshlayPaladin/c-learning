@@ -11,7 +11,7 @@ struct point {
 struct point *create_point(int x, int y, char c)
 {
     struct point *p = malloc(sizeof *p);
-    if(p == NULL)
+    if (p == NULL)
     {
         return NULL;
     }
@@ -25,20 +25,27 @@ struct point *create_point(int x, int y, char c)
 
 void destroy_point(struct point *p)
 {
+    if (p == NULL) return 0;
+
     free(p);
+    return 1;
 }
 
 void set_point_position(struct point *p, int newX, int newY)
 {
-    if (p == NULL) return;
+    if (p == NULL) return 0;
+
     p->x = newX;
     p->y = newY;
+    return 1;
 }
 
 void rename_point(struct point *p, char newC)
 {
-    if (p == NULL) return;
+    if (p == NULL) return 0;
+
     p->c = newC;
+    return 1;
 }
 
 void print_point(const struct point *p)
@@ -53,7 +60,7 @@ void print_point(const struct point *p)
 int main(void)
 {
     struct point *p = create_point(10, 20, 'A');
-    if(p == NULL)
+    if (p == NULL)
     {
         return 1;
     }
