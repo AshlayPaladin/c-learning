@@ -60,10 +60,7 @@ void print_point(const struct point *p)
 int main(void)
 {
     struct point *p = create_point(10, 20, 'A');
-    if (p == NULL)
-    {
-        return 1;
-    }
+    if (p == NULL) return 1;
 
     print_point(p);
 
