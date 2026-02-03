@@ -1,0 +1,8 @@
+# Compiled binaries
+bin/
+*.out
+*.exe
+
+# Editor junk
+*.swp
+*.tmp
